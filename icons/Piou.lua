@@ -1,0 +1,27 @@
+local lib_name = "LibCustomIcons"
+local lib = _G[lib_name]
+local s = lib.GetStaticTable()
+local a = lib.GetAnimatedTable()
+
+s["@siktel"] = "LibCustomIcons/icons/Piou/Sik.dds"
+s["@D3ath-III"] = "LibCustomIcons/icons/Piou/Dea.dds"
+s["@Malensis"] = "LibCustomIcons/icons/Piou/Mal2.dds"
+s["@Zs0bek"] = "LibCustomIcons/icons/Piou/Sob.dds"
+s["@HyprA101"] = "LibCustomIcons/icons/Piou/Hyp.dds"
+s["@joshrie"] = "LibCustomIcons/icons/Piou/Josh.dds"
+s["@BÆKI"] = "LibCustomIcons/icons/Piou/Baki.dds"
+s["@zqNqz"] = "LibCustomIcons/icons/Piou/Nqz.dds"
+s["@GODAV"] = "LibCustomIcons/icons/Piou/God.dds"
+s["@Iztlal"] = "LibCustomIcons/icons/Piou/Izt.dds"
+s["@zLieBe"] = "LibCustomIcons/icons/Piou/Lie.dds"
+s["@Karma-Akabane19"] = "LibCustomIcons/icons/Piou/Kar.dds"
+s["@Odin76"] = "LibCustomIcons/icons/Piou/Odin.dds"
+s["@Nyo-Rdn"] = "LibCustomIcons/icons/Piou/Nyo.dds"
+s["@Chelgoumy"] = "LibCustomIcons/icons/Piou/Chelgou.dds"
+s["@KOZYMEISTER"] = "LibCustomIcons/icons/Piou/Koz.dds"
+a["@HyprA101"] = {"LibCustomIcons/icons/Piou/Hyp_anim.dds", 73, 1, 20}
+a["@BÆKI"] = {"LibCustomIcons/icons/Piou/Bak1_anim.dds", 34, 1, 10}
+a["@zqNqz"] = {"LibCustomIcons/icons/Piou/Nqz_anim.dds", 16, 1, 10}
+a["@Nyo-Rdn"] = {"LibCustomIcons/icons/Piou/Nyo_anim.dds", 52, 1, 15}
+a["@Chelgoumy"] = {"LibCustomIcons/icons/Piou/Chelgou_anim.dds", 12, 1, 5}
+a["@KOZYMEISTER"] = {"LibCustomIcons/icons/Piou/Koz_anim.dds", 16, 1, 15}

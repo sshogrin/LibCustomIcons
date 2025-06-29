@@ -21,6 +21,7 @@ integrity.xml
 integrity.lua
 
 ## icons
+icons/animated.lua
 icons/cfm.lua
 icons/chainreaction.lua
 icons/corsair.lua

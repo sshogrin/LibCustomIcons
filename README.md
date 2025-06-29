@@ -36,28 +36,26 @@ local icon = LibCustomIcons.GetIcon("@accountName")
 ```
 Documentation will be expanded as needed — feel free to open an issue if you need help integrating it.
 
-📁 Repository Structure
+## 📁 Repository Structure
 icons/: Contains all custom icon definitions.
 
 LibCustomIcons.lua: Core logic to retrieve and manage custom icons.
 
-🤝 Contributing
+## 🤝 Contributing
 Community contributions are welcome and appreciated!
 
-Fork the repo
+- Fork the repo
+- Add your custom icon to the data file
+- Open a Pull Request with a short description
+- Make sure to keep icons appropriate and tasteful. Offensive or misleading content will not be accepted.
 
-Add your custom icon to the data file
-
-Open a Pull Request with a short description
-
-Make sure to keep icons appropriate and tasteful. Offensive or misleading content will not be accepted.
-
-🙏 Credits
+## 🙏 Credits
 <a href="https://github.com/m00nyONE/LibCustomIcons/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=m00nyONE/LibCustomIcons" />
 </a>
+
 Made with [contrib.rocks](https://contrib.rocks).
-📬 Contact
+## 📬 Contact
 For questions, contributions, or donations:
 
 GitHub: Issues & PRs

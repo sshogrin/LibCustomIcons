@@ -67,6 +67,7 @@ end
 local function slashCommands(str)
     if str == "version" then d(lib_version) end
     if str == "donate" then donate() end
+    if str == "integrity" then lib.IntegrityCheck() end
 end
 
 --- Register slash commands for interacting with the library.

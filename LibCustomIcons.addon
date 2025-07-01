@@ -13,6 +13,10 @@
 ;
 ; You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
 
+# language
+lang/en.lua
+lang/$(language).lua
+
 # Core Library
 LibCustomIcons.lua
 api.lua

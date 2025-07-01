@@ -1,21 +1,3 @@
---{
---	type = "header",
---	name = string.format("|cFFFACD%s|r", GetString(HR_MENU_ICONS_INTEGRITY)),
---},
---{
---	type = "description",
---	text = string.format("|cFFFACD%s|r", GetString(HR_MENU_ICONS_INTEGRITY_DESCRIPTION)),
---},
---{
---	type = "button",
---	name = GetString(HR_MENU_ICONS_INTEGRITY_CHECK),
---	tooltip = GetString(HR_MENU_ICONS_INTEGRITY_DESCRIPTION),
---	func = function()
---		HodorReflexes.integrity.Check()
---	end,
---	width = 'half',
---},
-
 local lib_name = "LibCustomIcons"
 local lib = _G[lib_name]
 local lib_name = lib.name
@@ -23,17 +5,6 @@ local lib_author = lib.author
 local lib_version = lib.version
 
 local LAM = LibAddonMenu2
-
---- Opens the in-game mail window with donation fields prefilled for supporting the library.
-local function donate()
-    SCENE_MANAGER:Show('mailSend')
-    zo_callLater(function()
-        ZO_MailSendToField:SetText(lib_author)
-        ZO_MailSendSubjectField:SetText("Donation for " .. lib_name)
-        ZO_MailSendBodyField:SetText("ticket-XXXX on Discord.")
-        ZO_MailSendBodyField:TakeFocus()
-    end, 250)
-end
 
 local function getPanel()
     return {

@@ -1,3 +1,6 @@
+## 2025.07.01
+- add integrity check /lci integrity
+
 ## 2025.06.27
 - first usable version
 - add api function to be used by other addons

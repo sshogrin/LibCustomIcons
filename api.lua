@@ -72,19 +72,22 @@ end
 
 
 -- cache
-local keys = nil
+local keys = {}
+local keysCached = false
 --- Returns a random user
 --- @return string id of a random user with a static icon
 function lib.GetRandomUserId()
-    if keys ~= nil then
+    if not keysCached then
         for userId in pairs(s) do
             table.insert(keys, userId)
         end
+        keysCached = true
     end
 
     if #keys > 0 then
         local randomIndex = math.random(#keys)
         return keys[randomIndex]
     end
+
     return nil
 end

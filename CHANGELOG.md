@@ -1,5 +1,6 @@
 ## 2025.07.01
 - add integrity check /lci integrity
+- add menu
 
 ## 2025.06.27
 - first usable version

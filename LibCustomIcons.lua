@@ -37,6 +37,8 @@ local function initialize()
         lib.GetAnimatedTable = nil
     end
 
+    lib.BuildMenu()
+
 end
 
 --- Register for the EVENT_ADD_ON_LOADED event to initialize the addon properly.
@@ -49,7 +51,7 @@ EM:RegisterForEvent(lib_name, EVENT_ADD_ON_LOADED, function(_, name)
 end)
 
 --- Opens the in-game mail window with donation fields prefilled for supporting the library.
-local function donate()
+function lib.Donate()
     SCENE_MANAGER:Show('mailSend')
     zo_callLater(function()
         ZO_MailSendToField:SetText(lib_author)
@@ -66,7 +68,7 @@ end
 --- @param str string The argument passed with the slash command
 local function slashCommands(str)
     if str == "version" then d(lib_version) end
-    if str == "donate" then donate() end
+    if str == "donate" then lib.Donate() end
     if str == "integrity" then lib.IntegrityCheck() end
 end
 

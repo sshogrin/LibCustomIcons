@@ -4,6 +4,7 @@
 ## Author: |c76c3f4@m00nyONE|r
 ## APIVersion: 101046
 ## AddOnVersion: 99999999
+;## SavedVariables: LibCustomIconsSV
 ## IsLibrary: true
 ## DependsOn: LibAddonMenu-2.0>=32
 

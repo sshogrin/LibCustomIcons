@@ -19,9 +19,11 @@ s["@Odin76"] = "LibCustomIcons/icons/Piou/Odin.dds"
 s["@Nyo-Rdn"] = "LibCustomIcons/icons/Piou/Nyo.dds"
 s["@Chelgoumy"] = "LibCustomIcons/icons/Piou/Chelgou.dds"
 s["@KOZYMEISTER"] = "LibCustomIcons/icons/Piou/Koz.dds"
+s["@DustyCharm"] = "LibCustomIcons/icons/Piou/Dus_=.dds"
 a["@HyprA101"] = {"LibCustomIcons/icons/Piou/Hyp_anim.dds", 73, 1, 20}
 a["@BÆKI"] = {"LibCustomIcons/icons/Piou/Bak1_anim.dds", 34, 1, 10}
 a["@zqNqz"] = {"LibCustomIcons/icons/Piou/Nqz_anim.dds", 16, 1, 10}
 a["@Nyo-Rdn"] = {"LibCustomIcons/icons/Piou/Nyo_anim.dds", 52, 1, 15}
 a["@Chelgoumy"] = {"LibCustomIcons/icons/Piou/Chelgou_anim.dds", 12, 1, 5}
 a["@KOZYMEISTER"] = {"LibCustomIcons/icons/Piou/Koz_anim.dds", 16, 1, 15}
+a["@DustyCharm"] = {"LibCustomIcons/icons/Piou/Dus_anim.dds", 6, 1, 10}

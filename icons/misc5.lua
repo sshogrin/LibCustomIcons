@@ -77,6 +77,7 @@ s["@ItsJustBogus"] = "LibCustomIcons/icons/misc5/ItsJustBogus.dds"
 s["@C1R1"] = "LibCustomIcons/icons/misc5/C1R1.dds"
 s["@AOG_Cocytus"] = "LibCustomIcons/icons/misc5/AOG_Cocytus.dds"
 s["@Rayba-Sama"] = "LibCustomIcons/icons/misc5/Rayba-Sama.dds"
+a["@Rayba-Sama"] = {"LibCustomIcons/icons/misc5/Rayba-Sama_anim.dds", 15, 2, 15}
 s["@Iuppiterr"] = "LibCustomIcons/icons/misc5/Iuppiterr2.dds"
 s["@ChillyT"] = "LibCustomIcons/icons/misc5/ChillyT.dds"
 s["@pdizzler"] = "LibCustomIcons/icons/misc5/pdizzler.dds"

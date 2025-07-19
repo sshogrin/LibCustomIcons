@@ -1,8 +1,8 @@
 import os
 
 # Directories
-LUA_DIR = "../../icons"
-TEXTURE_DIR = "../../icons"
+LUA_DIR = "icons"
+TEXTURE_DIR = "icons"
 
 # Collect all lines from .lua files
 lua_lines = []

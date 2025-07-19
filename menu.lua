@@ -37,7 +37,7 @@ local function getOptions()
 
     local _generateStaticCode = function(displayName)
 
-        local s = strfmt('s["%s"] = {"LibCustomIcons/icons/%s/%s.dds"}', displayName, currentFolder, _escapeName(displayName))
+        local s = strfmt('s["%s"] = "LibCustomIcons/icons/%s/%s.dds"', displayName, currentFolder, _escapeName(displayName))
         return s
     end
     local _generateAnimatedCode = function(displayName)

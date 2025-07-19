@@ -11,6 +11,8 @@ on:
 jobs:
   integrity:
     uses: ./.github/workflows/_integrity.yml
+  orphaned:
+    uses: ./.github/workflows/_orphaned.yml
   release:
     name: "dev release"
     runs-on: ubuntu-latest

@@ -1,0 +1,13 @@
+name: Check for Orphaned icons
+on:
+  workflow_call:
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check for orphaned icons
+        run: |
+          python3 .github/scripts/orphaned.py

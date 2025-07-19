@@ -3,3 +3,5 @@ on: [ pull_request ]
 jobs:
   integrity:
     uses: ./.github/workflows/_integrity.yml
+  orphaned:
+    uses: ./.github/workflows/_orphaned.yml

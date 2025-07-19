@@ -34,4 +34,4 @@ if orphaned_dds:
     for path in orphaned_dds:
         print(f" - {path}")
 else:
-    print("::info:: ✅ No orphaned .dds files found.")
+    print("::notice:: ✅ No orphaned .dds files found.")

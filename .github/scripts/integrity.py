@@ -40,5 +40,5 @@ if missing_files:
         print(f"::error:: ❌ Missing file: {path} (referenced in {lua_file}:{line_number})")
     sys.exit(1)
 else:
-    print("::notice:: ✅ All referenced .dds files are present.")
+    print("::info:: ✅ All referenced .dds files are present.")
     sys.exit(0)

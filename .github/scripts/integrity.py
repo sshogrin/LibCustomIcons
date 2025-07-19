@@ -37,8 +37,8 @@ for root, _, files in os.walk(SEARCH_DIR):
 # Report results
 if missing_files:
     for path, lua_file, line_number in missing_files:
-        print(f"Missing file: {path} (referenced in {lua_file}:{line_number})")
+        print(f"::error:: ❌ Missing file: {path} (referenced in {lua_file}:{line_number})")
     sys.exit(1)
 else:
-    print("All referenced .dds files are present.")
+    print("::notice:: ✅ All referenced .dds files are present.")
     sys.exit(0)

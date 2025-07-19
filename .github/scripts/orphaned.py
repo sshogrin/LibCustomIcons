@@ -30,8 +30,8 @@ for root, _, files in os.walk(TEXTURE_DIR):
 
 # Output results
 if orphaned_dds:
-    print("🔍 Orphaned .dds files:")
+    print("::notice:: 🔍 Orphaned .dds files:")
     for path in orphaned_dds:
-        print(f" - {path}")
+        print(f"::notice:: - {path}")
 else:
-    print("✅ No orphaned .dds files found.")
+    print("::notice:: ✅ No orphaned .dds files found.")

@@ -15,6 +15,9 @@ local svDefaults = {
 local LAM = LibAddonMenu2
 local strfmt = string.format
 
+local githubURL = "https://github.com/m00nyONE/LibCustomIcons"
+
+
 local function getPanel()
     return {
         type = 'panel',
@@ -36,19 +39,16 @@ local function getOptions()
     end
 
     local _generateStaticCode = function(displayName)
-
-        local s = strfmt('s["%s"] = "LibCustomIcons/icons/%s/%s.dds"', displayName, currentFolder, _escapeName(displayName))
-        return s
+        return strfmt('s["%s"] = "LibCustomIcons/icons/%s/%s.dds"', displayName, currentFolder, _escapeName(displayName))
     end
     local _generateAnimatedCode = function(displayName)
-        local s = strfmt('a["%s"] = {"LibCustomIcons/icons/%s/%s_anim.dds", 0, 0, 0}', displayName, currentFolder, _escapeName(displayName))
-        return s
+        return strfmt('a["%s"] = {"LibCustomIcons/icons/%s/%s_anim.dds", 0, 0, 0}', displayName, currentFolder, _escapeName(displayName))
     end
 
     local _generateCode = function()
         local displayName = GetDisplayName('player')
 
-        local code = "```\n"
+        local code = ""
         if sv.genStatic then
             code = code .. _generateStaticCode(displayName)
             code = code .. "\n"
@@ -57,7 +57,6 @@ local function getOptions()
             code = code .. _generateAnimatedCode(displayName)
             code = code .. "\n"
         end
-        code = code .. "```"
 
         return code
     end
@@ -65,68 +64,69 @@ local function getOptions()
     return {
         {
             type = "submenu",
-            name = strfmt("|cFF8800%s|r", GetString(LCI_MENU_README)),
+            name = strfmt("|cFF8800%s|r", "For Developers"),
             controls = {
                 {
                     type = "description",
-                    text = strfmt("|c00FF001.|r %s", GetString(LCI_MENU_README1))
+                    text = "If you know how to code addons, you can just create a PullRequest on Github and add a custom name that way."
                 },
                 {
-                    type = "description",
-                    text = strfmt("|c00FF002.|r %s", strfmt(GetString(LCI_MENU_README2), LAM.util.L.WEBSITE))
-                ,}
+                    type = "button",
+                    name = "github",
+                    func = function() RequestOpenUnsafeURL(githubURL) end,
+                    width = 'full',
+                },
+                {
+                    type = "header",
+                    name = strfmt("|cFFFACD%s|r", GetString(LCI_MENU_HEADER))
+                },
+                {
+                    type = "checkbox",
+                    name = GetString(LCI_MENU_GEN_STATIC),
+                    tooltip = GetString(LCI_MENU_GEN_STATIC_TT),
+                    default = false,
+                    getFunc = function() return sv.genStatic end,
+                    setFunc = function(value)
+                        sv.genStatic = value
+                    end,
+                },
+                {
+                    type = "checkbox",
+                    name = GetString(LCI_MENU_GEN_ANIMATED),
+                    tooltip = GetString(LCI_MENU_GEN_ANIMATED_TT),
+                    default = false,
+                    getFunc = function() return sv.genAnimated end,
+                    setFunc = function(value)
+                        sv.genAnimated = value
+                    end,
+                },
+                {
+                    type = "editbox",
+                    name = GetString(LCI_MENU_LUA),
+                    tooltip = GetString(LCI_MENU_LUA_TT),
+                    default = _generateCode(),
+                    getFunc = function() return _generateCode() end,
+                    setFunc = function(value) end,
+                    isMultiline = true,
+                    isExtraWide = true,
+                },
             },
         },
         {
             type = "header",
-            name = strfmt("|cFFFACD%s|r", GetString(LCI_MENU_HEADER))
-        },
-        {
-            type = "checkbox",
-            name = GetString(LCI_MENU_GEN_STATIC),
-            tooltip = GetString(LCI_MENU_GEN_STATIC_TT),
-            default = false,
-            getFunc = function() return sv.genStatic end,
-            setFunc = function(value)
-                sv.genStatic = value
-            end,
-        },
-        {
-            type = "checkbox",
-            name = GetString(LCI_MENU_GEN_ANIMATED),
-            tooltip = GetString(LCI_MENU_GEN_ANIMATED_TT),
-            default = false,
-            getFunc = function() return sv.genAnimated end,
-            setFunc = function(value)
-                sv.genAnimated = value
-            end,
-        },
-        {
-            type = "editbox",
-            name = GetString(LCI_MENU_LUA),
-            tooltip = GetString(LCI_MENU_LUA_TT),
-            default = _generateCode(),
-            getFunc = function() return _generateCode() end,
-            setFunc = function(value) end,
-            isMultiline = true,
-            isExtraWide = true,
-        },
-        {
-            type = "submenu",
             name = string.format("|cFFFACD%s|r", GetString(LCI_MENU_INTEGRITY)),
-            controls = {
-                {
-                    type = "description",
-                    text = string.format("|cFFFACD%s|r", GetString(LCI_MENU_INTEGRITY_DESCRIPTION)),
-                },
-                {
-                    type = "button",
-                    name = "Check",
-                    tooltip = "Check the integrity of LibCustomIcons",
-                    func = lib.IntegrityCheck,
-                    width = 'half',
-                },
-            },
+        },
+        {
+            type = "description",
+            text = string.format("|cFFFACD%s|r", GetString(LCI_MENU_INTEGRITY_DESCRIPTION)),
+            width = "half",
+        },
+        {
+            type = "button",
+            name = "Check",
+            tooltip = "Check the integrity of LibCustomIcons",
+            func = lib.IntegrityCheck,
+            width = 'half',
         },
     }
 end

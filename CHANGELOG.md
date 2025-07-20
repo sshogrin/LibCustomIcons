@@ -1,4 +1,5 @@
 ## 2025.07.20
+- update menu
 - Dolgubon you coulda just asked :D
 
 ## 2025.07.01

@@ -56,7 +56,7 @@ function lib.Donate()
     zo_callLater(function()
         ZO_MailSendToField:SetText(lib_author)
         ZO_MailSendSubjectField:SetText("Donation for " .. lib_name)
-        ZO_MailSendBodyField:SetText("ticket-XXXX on Discord.")
+        ZO_MailSendBodyField:SetText("")
         ZO_MailSendBodyField:TakeFocus()
     end, 250)
 end

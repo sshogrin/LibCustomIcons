@@ -79,6 +79,7 @@ a["@Eco_212"] = {"LibCustomIcons/icons/moo/Eco_212_anim.dds", 23, 2, 23}
 a["@NikG1"] = {"LibCustomIcons/icons/moo/NikG1_anim.dds", 10, 5, 16}
 a["@Drachilo"] = {"LibCustomIcons/icons/moo/Drachilo_anim.dds", 12, 4, 12}
 s["@Drachilo"] = "LibCustomIcons/icons/moo/Drachilo.dds"
+s["@Dolgubon"] = "LibCustomIcons/icons/moo/Dolgubon.dds"
 a["@Ermsi"] = {"LibCustomIcons/icons/moo/Ermsi_anim.dds", 14, 1, 20}
 a["@schm00nel"] = a["@m00nyONE"]
 a["@C.arley"] = a["@seadotarley"]

@@ -1,3 +1,6 @@
+## 2025.07.20
+- Dolgubon you coulda just asked :D
+
 ## 2025.07.01
 - add integrity check /lci integrity
 - add menu

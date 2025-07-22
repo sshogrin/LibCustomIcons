@@ -1,3 +1,7 @@
+## 2025.07.22
+- remove orphaned icons
+- new contributions
+
 ## 2025.07.20
 - update menu
 - Dolgubon you coulda just asked :D

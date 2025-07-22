@@ -176,6 +176,7 @@ s["@sagitta14"] = "LibCustomIcons/icons/misc7/sagitta14.dds"
 s["@LianYi2044"] = "LibCustomIcons/icons/misc7/LianYi2044.dds"
 a["@Zard_9527"] = {"LibCustomIcons/icons/misc7/Zard_9527_anim.dds", 3, 2, 10}
 s["@prismaticsgg"] = "LibCustomIcons/icons/misc7/prismaticsgg.dds"
+s["@WashedNotSloshed"] = "LibCustomIcons/icons/misc7/WashedNotSloshed.dds"
 s["@braiso_24"] = "LibCustomIcons/icons/misc7/braiso_24.dds"
 s["@Thorheit-Teutonia"] = "LibCustomIcons/icons/misc7/Thorheit-Teutonia.dds"
 s["@Dark_Hydralisk"] = "LibCustomIcons/icons/misc7/Dark_Hydralisk.dds"

@@ -183,3 +183,4 @@ s["@Dark_Hydralisk"] = "LibCustomIcons/icons/misc7/Dark_Hydralisk.dds"
 a["@ShIsanSAkura"] = {"LibCustomIcons/icons/misc7/ShIsanSAkura_anim.dds", 7, 4, 25}
 s["@NERV1010"] = "LibCustomIcons/icons/misc7/NERV1010.dds"
 s["@Calisto7"] = "LibCustomIcons/icons/misc7/Calisto7.dds"
+s["@Latinwolverine"] = "LibCustomIcons/icons/misc7/Latinwolverine.dds"

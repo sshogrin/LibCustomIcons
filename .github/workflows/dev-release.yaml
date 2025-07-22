@@ -1,9 +1,6 @@
 name: Dev Release
 
 on:
-  #schedule:
-  # every saturday at 05:07am
-  #  - cron: "7 5 * * 0"
   push:
     branches:
       - main
@@ -83,7 +80,7 @@ jobs:
           prerelease: true
           updateOnlyUnreleased: true
 
-      - name: Upload to ESOUI
+      - name: Test Upload to ESOUI
         uses: m00nyONE/esoui-upload@v2
         with:
           api_key: ${{ secrets.ESOUI_API_KEY }}

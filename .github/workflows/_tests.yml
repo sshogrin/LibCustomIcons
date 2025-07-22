@@ -10,7 +10,7 @@ jobs:
 
       - name: Check for missing icon files
         run: |
-          python3 .github/scripts/integrity.py
+          python3 .github/scripts/check-missing.py
   check-for-orphaned-icons:
     runs-on: ubuntu-latest
     steps:
@@ -19,4 +19,13 @@ jobs:
 
       - name: Check for orphaned icon files
         run: |
-          python3 .github/scripts/orphaned.py
+          python3 .github/scripts/check-orphaned.py
+  check-for-missing-includes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check for missing includes in LibCustomIcons.addon
+        run: |
+          python3 .github/scripts/check-includes.py

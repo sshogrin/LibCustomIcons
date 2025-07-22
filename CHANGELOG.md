@@ -1,6 +1,8 @@
 ## 2025.07.22
 - remove orphaned icons
+- remove duplicate entries
 - new contributions
+- add a few tests like sanity-check, include-check, duplicate-check to the github pipeline
 
 ## 2025.07.20
 - update menu

@@ -26,3 +26,11 @@ jobs:
       - name: Check for missing includes in LibCustomIcons.addon
         run: |
           python3 .github/scripts/check-includes.py
+  check-for-duplicates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check for duplicate definitions
+        run: |
+          python3 .github/scripts/check-duplicates.py

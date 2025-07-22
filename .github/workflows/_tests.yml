@@ -1,4 +1,4 @@
-name: Check integrity
+name: Tests
 on:
   workflow_call:
 jobs:
@@ -7,7 +7,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
       - name: Check for missing icon files
         run: |
           python3 .github/scripts/check-missing.py
@@ -16,7 +15,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
       - name: Check for orphaned icon files
         run: |
           python3 .github/scripts/check-orphaned.py
@@ -25,7 +23,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
       - name: Check for missing includes in LibCustomIcons.addon
         run: |
           python3 .github/scripts/check-includes.py

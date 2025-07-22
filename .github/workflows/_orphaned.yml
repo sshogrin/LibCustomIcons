@@ -2,7 +2,7 @@ name: Check for Orphaned icons
 on:
   workflow_call:
 jobs:
-  integrity:
+  orphaned:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository

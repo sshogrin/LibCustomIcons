@@ -3,7 +3,6 @@ local lib = _G[lib_name]
 local s = lib.GetStaticTable()
 local a = lib.GetAnimatedTable()
 
-s["@wsdamo"] = "LibCustomIcons/icons/misc/wsdamo.dds"
 s["@Jaise-N"] = "LibCustomIcons/icons/misc2/jaisen.dds"
 s["@thecreed00"] = "LibCustomIcons/icons/misc2/thecreed00.dds"
 s["@patachoux"] = "LibCustomIcons/icons/misc2/patachoux.dds"
@@ -121,7 +120,6 @@ s["@B00mslang"] = "LibCustomIcons/icons/misc2/b00mslang2.dds"
 s["@Square_Dude"] = "LibCustomIcons/icons/misc2/Square_Dude.dds"
 s["@Bounceplus1"] = "LibCustomIcons/icons/misc2/bounceplus1.dds"
 s["@BoysNoize87"] = "LibCustomIcons/icons/misc2/boysnoize87.dds"
-s["@doctorosen"] = "LibCustomIcons/icons/misc2/doctorosen.dds"
 s["@Cadro"] = "LibCustomIcons/icons/misc2/cadro.dds"
 s["@silver-haze1651"] = "LibCustomIcons/icons/misc2/silverhaze1651.dds"
 s["@Wyper0"] = "LibCustomIcons/icons/misc2/wyper0.dds"

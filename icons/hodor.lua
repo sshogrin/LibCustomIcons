@@ -5,7 +5,7 @@ local a = lib.GetAnimatedTable()
 
 s["@andy.s"] = "LibCustomIcons/icons/flags/russia.dds"
 s["@Alcast"] = "LibCustomIcons/icons/hodor/alcast.dds"
-s["@OldManAlcast"] = "LibCustomIcons/icons/hodor/alcast.dds"
+s["@OldManAlcast"] = s["@Alcast"]
 s["@Karma'X"] = "LibCustomIcons/icons/flags/al.dds"
 s["@iN_Lancast"] = "LibCustomIcons/icons/hodor/lancast.dds"
 s["@IWM"] = "LibCustomIcons/icons/flags/no.dds"

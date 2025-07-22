@@ -1,4 +1,5 @@
 ## 2025.07.22
+- Addon now automatically releases every sunday if there are changes in the files
 - remove orphaned icons
 - remove duplicate entries
 - new contributions

@@ -1,12 +1,9 @@
-name: ESOUI Release
+name: Scheduled ESOUI Release
 
 on:
-  #schedule:
-  # every saturday at 05:07am
-  #  - cron: "7 5 * * 0"
-  push:
-    branches:
-      - release # to be changed to main with schedule
+  schedule:
+    # every sunday at 04:15am
+    - cron: "15 4 * * 1"
 
 jobs:
   test:
@@ -20,7 +17,37 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Check for changes since last release
+        id: check_changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🔍 Checking for changes since the last release..."
+          REPO="$GITHUB_REPOSITORY"
+          LAST_RELEASE_TAG=$(gh api repos/${GITHUB_REPOSITORY}/releases/latest --jq .tag_name || echo "")
+          
+          if [ -z "$LAST_RELEASE_TAG" ] || [ "$LAST_RELEASE_TAG" = "null" ]; then
+            echo "⚠️ No previous release found, proceeding with release."
+            echo "should_release=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "Last release tag: $LAST_RELEASE_TAG"
+          
+          git fetch --quiet --tags
+          CHANGED=$(git diff --name-only "$LAST_RELEASE_TAG" HEAD | grep -E '\.(lua|txt|md|xml|addon|dds)$' || true)
+          
+          if [ -z "$CHANGED" ]; then
+            echo "✅ No relevant file changes since $LAST_RELEASE_TAG."
+            echo "should_release=false" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Changes detected:"
+            echo "$CHANGED"
+            echo "should_release=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Get current year, month and day
+        if: steps.check_changes.outputs.should_release == 'true'
         run: |
           echo "BUILD_DATE_YEAR=$(date -u +'%Y')" >> $GITHUB_ENV
           echo "BUILD_DATE_MONTH=$(date -u +'%m')" >> $GITHUB_ENV
@@ -30,6 +57,7 @@ jobs:
           echo "BUILD_DATE_WITH_HYPHEN=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Create env variables
+        if: steps.check_changes.outputs.should_release == 'true'
         run: |
           addon_name="LibCustomIcons"
           version="${{ env.BUILD_DATE_WITH_HYPHEN }}"
@@ -40,12 +68,14 @@ jobs:
           echo "ZIP_FULL_NAME=${addon_name}-${version}.zip" >> $GITHUB_ENV
 
       - name: Replace placeholders with current date
+        if: steps.check_changes.outputs.should_release == 'true'
         run: |
           sed -i "s/version = \"dev\"/version = \"${{ env.ADDON_VERSION }}\"/g" ${{ env.ADDON_NAME }}.lua
           sed -i "s/## Version: dev/## Version: ${{ env.ADDON_VERSION }}/g" ${{ env.ADDON_NAME }}.addon
           sed -i "s/## AddOnVersion: 99999999/## AddOnVersion: ${{ env.BUILD_DATE_NUMBER }}/g" ${{ env.ADDON_NAME }}.addon
 
       - name: Create ZIP archive
+        if: steps.check_changes.outputs.should_release == 'true'
         run: |
           REPO_FOLDER=$(pwd)
           TMP_FOLDER="/tmp/${{ env.ADDON_NAME }}"
@@ -64,12 +94,14 @@ jobs:
           (cd /tmp && zip -r --quiet "$REPO_FOLDER/${{ env.ZIP_FULL_NAME }}" "${{ env.ADDON_NAME }}")
 
       - name: Extract latest changelog entry
+        if: steps.check_changes.outputs.should_release == 'true'
         run: |
           awk '/^## / { if (!found) { found=1; print; next } else { exit } } found' CHANGELOG.md > latest_changes.md
           cat latest_changes.md
 
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
+        if: steps.check_changes.outputs.should_release == 'true'
         with:
           name: "${{ env.ADDON_VERSION }}"
           commit: ${{ github.ref }}
@@ -80,8 +112,20 @@ jobs:
           allowUpdates: true
           makeLatest: true
 
+      - name: Test Upload to ESOUI
+        uses: m00nyONE/esoui-upload@v2
+        if: steps.check_changes.outputs.should_release == 'true'
+        with:
+          api_key: ${{ secrets.ESOUI_API_KEY }}
+          addon_id: '4161'
+          version: ${{ env.ADDON_VERSION }}
+          zip_file: ${{ env.ZIP_FULL_NAME }}
+          changelog_file: 'CHANGELOG.md'
+          test: true
+
       - name: Upload to ESOUI
         uses: m00nyONE/esoui-upload@v2
+        if: steps.check_changes.outputs.should_release == 'true'
         with:
           api_key: ${{ secrets.ESOUI_API_KEY }}
           addon_id: '4161'

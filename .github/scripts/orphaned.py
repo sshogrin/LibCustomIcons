@@ -1,4 +1,5 @@
 import os
+import sys
 
 # Directories
 LUA_DIR = "icons"
@@ -33,5 +34,7 @@ if orphaned_dds:
     print("::warning:: 🔍 Orphaned .dds files found:")
     for path in orphaned_dds:
         print(f" - {path}")
+    sys.exit(0)
 else:
     print("::notice:: ✅ No orphaned .dds files found.")
+    sys.exit(0)

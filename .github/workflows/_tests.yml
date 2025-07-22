@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Check icon integrity
+      - name: Check for missing icon files
         run: |
           python3 .github/scripts/integrity.py
   check-for-orphaned-icons:
@@ -17,6 +17,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Check for orphaned icons
+      - name: Check for orphaned icon files
         run: |
           python3 .github/scripts/orphaned.py

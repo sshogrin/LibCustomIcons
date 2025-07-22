@@ -9,13 +9,13 @@ on:
       - main
 
 jobs:
-  check-integrity:
-    uses: ./.github/workflows/_integrity.yml
+  test:
+    uses: ./.github/workflows/_tests.yml
   release:
     name: "dev release"
     runs-on: ubuntu-latest
     permissions: write-all
-    needs: [ 'check-integrity' ]
+    needs: [ 'test' ]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4

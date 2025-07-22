@@ -9,13 +9,13 @@ on:
       - release # to be changed to main with schedule
 
 jobs:
-  check-integrity:
-    uses: ./.github/workflows/_integrity.yml
+  test:
+    uses: ./.github/workflows/_tests.yml
   release:
     name: "release"
     runs-on: ubuntu-latest
     permissions: write-all
-    needs: [ 'check-integrity' ]
+    needs: [ 'test' ]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4

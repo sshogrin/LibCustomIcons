@@ -1,7 +1,5 @@
 name: Check integrity
 on: [ pull_request ]
 jobs:
-  integrity:
+  check-integrity:
     uses: ./.github/workflows/_integrity.yml
-  orphaned:
-    uses: ./.github/workflows/_orphaned.yml

@@ -2,7 +2,7 @@ name: Check integrity
 on:
   workflow_call:
 jobs:
-  integrity:
+  check-for-missing-icons:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -11,3 +11,12 @@ jobs:
       - name: Check icon integrity
         run: |
           python3 .github/scripts/integrity.py
+  check-for-orphaned-icons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check for orphaned icons
+        run: |
+          python3 .github/scripts/orphaned.py

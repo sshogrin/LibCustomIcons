@@ -42,3 +42,11 @@ jobs:
       - name: Checks if textures are used multiple times
         run: |
           python3 .github/scripts/check-multiuse.py
+  sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Checks if static and animated entries make sense
+        run: |
+          python3 .github/scripts/check-sanity.py

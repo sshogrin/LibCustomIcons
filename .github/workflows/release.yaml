@@ -7,8 +7,10 @@ on:
 
 jobs:
   test:
+    if: github.repository_owner == 'm00nyONE'
     uses: ./.github/workflows/_tests.yml
   release:
+    if: github.repository_owner == 'm00nyONE'
     name: "release"
     runs-on: ubuntu-latest
     permissions: write-all

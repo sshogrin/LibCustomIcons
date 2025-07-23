@@ -1,6 +1,7 @@
 name: Scheduled ESOUI Release
 
 on:
+  workflow_dispatch:
   schedule:
     # every sunday at 04:15am
     - cron: "15 4 * * 1"

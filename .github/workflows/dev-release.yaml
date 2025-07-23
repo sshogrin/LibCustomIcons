@@ -70,7 +70,7 @@ jobs:
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          name: "${{ env.ADDON_VERSION }}"
+          name: "latest"
           commit: ${{ github.ref }}
           tag: "${{ env.ADDON_VERSION }}"
           artifacts: "${{ env.ZIP_FULL_NAME }}"

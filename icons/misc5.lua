@@ -416,6 +416,7 @@ s["@Sol.Phoenix"] = "LibCustomIcons/icons/misc5/SolPhoenix.dds"
 s["@murphie72"] = "LibCustomIcons/icons/misc5/murphie72.dds"
 s["@Ebelix"] = "LibCustomIcons/icons/misc5/Ebelix_2.dds"
 s["@Fealm"] = "LibCustomIcons/icons/misc5/Fealm.dds"
+a["@Fealm"] = {"LibCustomIcons/icons/misc5/Fealm_anim.dds", 7, 3, 16}
 s["@BlueJaguar99"] = "LibCustomIcons/icons/misc5/BlueJaguar99.dds"
 s["@ssgtmccrae"] = "LibCustomIcons/icons/misc5/ssgtmccrae.dds"
 s["@Ganjii_x"] = "LibCustomIcons/icons/misc5/Ganjii_x.dds"

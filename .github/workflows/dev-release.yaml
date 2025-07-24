@@ -7,9 +7,9 @@ on:
 
 jobs:
   test:
-    if: github.repository_owner == 'm00nyONE'
     uses: ./.github/workflows/_tests.yml
   release:
+    if: github.repository_owner == 'm00nyONE'
     name: "dev release"
     runs-on: ubuntu-latest
     permissions: write-all
@@ -72,7 +72,7 @@ jobs:
         with:
           name: "latest"
           commit: ${{ github.ref }}
-          tag: "${{ env.ADDON_VERSION }}"
+          tag: "latest"
           artifacts: "${{ env.ZIP_FULL_NAME }}"
           artifactContentType: application/zip
           bodyFile: latest_changes.md

@@ -193,3 +193,5 @@ a["@GENRAL-LAGGZ"] = {"LibCustomIcons/icons/misc7/GENRAL-LAGGZ_anim.dds", 3, 2, 
 s["@ewilliam"] = "LibCustomIcons/icons/misc7/ewilliam.dds"
 a["@ewilliam"] = {"LibCustomIcons/icons/misc7/ewilliam_anim.dds", 19, 1, 20}
 s["@Chay'Kashet"] = "LibCustomIcons/icons/misc7/ChayKashet.dds"
+s["@Pocket3591"] = "LibCustomIcons/icons/misc7/Pocket3591.dds"
+a["@Pocket3591"] = {"LibCustomIcons/icons/misc7/Pocket3591_anim.dds", 5, 1, 10}

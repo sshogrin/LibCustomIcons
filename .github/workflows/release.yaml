@@ -1,4 +1,4 @@
-name: Scheduled ESOUI Release
+name: ESOUI Release
 
 on:
   workflow_dispatch:

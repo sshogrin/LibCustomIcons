@@ -17,6 +17,20 @@ local static = {}
 --- @type table<string, string[]> Table mapping `@accountname` to { texturePath, sizeX, sizeY, fps }
 local animated = {}
 
+--- Returns a read-only proxy table
+local function readOnly(t)
+    local proxy = {}
+    local metatable = {
+        --__metatable = "no indexing allowed",
+        __index = t,
+        __newindex = function(_, k, v)
+            d("attempt to update read-only table")
+        end,
+    }
+    setmetatable(proxy, metatable)
+    return proxy
+end
+
 --- Returns a reference to the internal static table.
 --- This is only available during addon initialization, to disallow other addons tampering with the data later.
 function lib.GetStaticTable()
@@ -39,6 +53,8 @@ local function initialize()
 
     lib.BuildMenu()
 
+    -- make the Lib read-only
+    _G[lib_name] = readOnly(lib)
 end
 
 --- Register for the EVENT_ADD_ON_LOADED event to initialize the addon properly.

@@ -253,6 +253,7 @@ s["@sptlssmnd"] = "LibCustomIcons/icons/misc2/sptlssmnd2.dds"
 s["@Bunnisox"] = "LibCustomIcons/icons/misc2/bunnisox2.dds"
 s["@Aerifex"] = "LibCustomIcons/icons/misc2/aerifex.dds"
 s["@spr4yer"] = "LibCustomIcons/icons/misc2/spr4yer.dds"
+s["@DIFFx22"] = "LibCustomIcons/icons/misc2/DIFFx22.dds"
 a["@ACEINTHEHOLE"] = {"LibCustomIcons/icons/misc2/ACEINTHEHOLE_anim2.dds", 27, 1, 10}
 a["@skyeson"] = {"LibCustomIcons/icons/misc2/skyeson_anim.dds", 10, 1, 25}
 a["@Sorrowowo"] = {"LibCustomIcons/icons/misc2/reniy123_anim.dds", 10, 1, 34}

@@ -100,18 +100,21 @@ def main():
     print(f"{len(warnings)} warning(s), {len(errors)} error(s)")
 
     if warnings:
-        print("::warning:: Warnings:")
+        print("::warning:: ⚠️ Warnings:")
         for w in warnings:
             print(w)
 
     if errors:
-        print("::error:: Errors:")
+        print("::error:: ❌ Errors:")
         for e in errors:
             print(e)
 
     if errors:
         sys.exit(1)
+    if warnings:
+        sys.exit(1)
 
+    print("::notice:: ✅ All .dds files follow the guidelines")
     sys.exit(0)
 
 

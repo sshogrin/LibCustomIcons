@@ -1133,4 +1133,4 @@ a["@DevJake"] = {"LibCustomIcons/icons/misc3/devjake_anim2.dds", 24, 1, 13}
 a["@Abosho"] = {"LibCustomIcons/icons/misc3/abosho_anim3.dds", 8, 5, 25}
 a["@KaronisEQ2"] = {"LibCustomIcons/icons/misc3/KaronisEQ2_anim.dds", 7, 6, 10}
 a["@OGVictory"] = a["@DeathswiT"]
-a["@Foolebuilt"] = a['catjam']
+a["@Foolebuilt"] = a["catjam"]

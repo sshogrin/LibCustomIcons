@@ -198,3 +198,4 @@ a["@Pocket3591"] = {"LibCustomIcons/icons/misc7/Pocket3591_anim.dds", 5, 1, 10}
 s["@InsaneShad0w92"] = "LibCustomIcons/icons/misc7/InsaneShad0w92.dds"
 s["@CRaull"] = "LibCustomIcons/icons/misc7/CRaull.dds"
 s["@Manitaropitas"] = "LibCustomIcons/icons/misc7/Manitaropitas.dds"
+s["@IgnisCore"] = "LibCustomIcons/icons/misc7/IgnisCore.dds"

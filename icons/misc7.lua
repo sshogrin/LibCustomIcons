@@ -201,3 +201,6 @@ a["@MaceWinduwu"] = {"LibCustomIcons/icons/misc7/MaceWinduwu_anim.dds", 32, 1, 3
 s["@CRaull"] = "LibCustomIcons/icons/misc7/CRaull.dds"
 s["@RadienESO"] = "LibCustomIcons/icons/misc7/RadienESO.dds"
 s["@Manitaropitas"] = "LibCustomIcons/icons/misc7/Manitaropitas.dds"
+s["@IgnisCore"] = "LibCustomIcons/icons/misc7/IgnisCore.dds"
+s["@KendrasKenpachi"] = "LibCustomIcons/icons/misc7/KendrasKenpachi.dds"
+s["@Minasgorth"] = "LibCustomIcons/icons/misc7/Minasgorth.dds"

@@ -87,5 +87,7 @@ def main():
     if foundWarnings:
         sys.exit(0)
 
+    print("::notice:: ✅ No errors in .lua files found")
+
 if __name__ == "__main__":
     main()

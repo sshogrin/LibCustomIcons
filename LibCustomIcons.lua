@@ -1,4 +1,4 @@
---- general initialization
+---@class LibCustomIcons
 local lib = {
     name = "LibCustomIcons",
     version = "dev",
@@ -12,18 +12,40 @@ _G[lib_name] = lib
 
 local EM = EVENT_MANAGER
 
---- @type table<string, string> Table mapping `@accountname` to { texturePath }
+--- @class animEntry
+--- @field texturePath string path of the sprite texture
+--- @field width number amount of horizontal frames in the sprite
+--- @field height number amount of vertical frames in the sprite
+--- @field fps number frames per second of the animation
+
+--- @type table<string, string> Table mapping `@accountname` to "texturePath"
 local static = {}
---- @type table<string, string[]> Table mapping `@accountname` to { texturePath, sizeX, sizeY, fps }
+--- @type table<string, animEntry> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
 local animated = {}
+
+--- Returns a read-only proxy table
+local function readOnly(t)
+    local proxy = {}
+    local metatable = {
+        --__metatable = "no indexing allowed",
+        __index = t,
+        __newindex = function(_, k, v)
+            d("attempt to update read-only table")
+        end,
+    }
+    setmetatable(proxy, metatable)
+    return proxy
+end
 
 --- Returns a reference to the internal static table.
 --- This is only available during addon initialization, to disallow other addons tampering with the data later.
+--- @return table<string, string> The table of custom static icons.
 function lib.GetStaticTable()
     return static
 end
 --- Returns a reference to the internal animated table.
 --- This is only available during addon initialization, to disallow other addons tampering with the data later.
+------ @return table<string, animEntry> The table of custom animated icons.
 function lib:GetAnimatedTable()
     return animated
 end
@@ -39,6 +61,8 @@ local function initialize()
 
     lib.BuildMenu()
 
+    -- make the Lib read-only
+    _G[lib_name] = readOnly(lib)
 end
 
 --- Register for the EVENT_ADD_ON_LOADED event to initialize the addon properly.

@@ -50,3 +50,11 @@ jobs:
       - name: Checks if static and animated entries make sense
         run: |
           python3 .github/scripts/check-sanity.py
+  texture-properties:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Checks if textures follow the guidelines
+        run: |
+          python3 .github/scripts/check-texture-properties.py

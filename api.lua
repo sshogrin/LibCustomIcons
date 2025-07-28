@@ -4,7 +4,7 @@ local lib = _G[lib_name]
 local s = lib.GetStaticTable()
 local a = lib.GetAnimatedTable()
 
--- internal function that created a deep copy of a table
+--- function that creates a deep copy of a table
 local function clone(t)
     local copy = {}
     for k, v in pairs(t) do
@@ -41,14 +41,14 @@ function lib.GetStatic(username)
 end
 --- Retrieves the texturePath and animation parameters of the animated icon for the user or nil if none exists.
 --- @param username string The player's account name (e.g., "@m00nyONE").
---- @return table<string,sizeX,sizeY,fps>|nil {texturePath, sizeX, sizeY, fps} or `nil` if no static icon exists
+--- @return table<string,animEntry>|nil `{texturePath, width, height, fps}` or `nil` if no static icon exists
 function lib.GetAnimated(username)
     return a[username]
 end
 
 --- Retrieves the texturePath and animation parameters of the animated icon for the user if it exists or the texturePath of the static icon for the user or nil if none exists.
 --- @param username string The player's account name (e.g., "@m00nyONE").
---- @return table<string,sizeX,sizeY,fps>|string|nil {texturePath, sizeX, sizeY, fps} or texturePath or `nil` if no static icon exists
+--- @return table<string,animEntry>|string|nil `{texturePath, width, height, fps}` or `texturePath` or `nil` if no static icon exists
 function lib.GetIcon(username)
     local anim = lib.GetAnimated(username)
     if anim then return anim end
@@ -60,12 +60,12 @@ function lib.GetIcon(username)
 end
 
 --- Retrieves all registered static icons
----@return table<string, string> table mapping `@accountname` to `texturePath` for all static icons
+---@return table<string,string> table mapping `@accountname` to `texturePath` for all static icons
 function lib.GetAllStaticIcons()
     return clone(s)
 end
 --- Retrieves all registered static icons
----@return table<string, string[]> table mapping `@accountname` to `{texturePath, sizeX, sizeY, fps}` for all animated icons
+---@return table<string,animEntry> table mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
 function lib.GetAllAnimatedIcons()
     return clone(a)
 end

@@ -38,13 +38,13 @@ end
 
 --- Returns a reference to the internal static table.
 --- This is only available during addon initialization, to disallow other addons tampering with the data later.
---- @return table<string, string> The table of custom static icons.
+--- returns table<string, string> The table of custom static icons.
 function lib.GetStaticTable()
     return static
 end
 --- Returns a reference to the internal animated table.
 --- This is only available during addon initialization, to disallow other addons tampering with the data later.
---- @return table<string, animEntry> The table of custom animated icons.
+--- returns table<string, animEntry> The table of custom animated icons.
 function lib.GetAnimatedTable()
     return animated
 end
@@ -88,7 +88,6 @@ end
 --- Usage:
 --- - `/lci version` — shows current version
 --- - `/lci donate` — opens mail window for donations
---- @param str string The argument passed with the slash command
 local function slashCommands(str)
     if str == "version" then d(lib_version) end
     if str == "donate" then lib.Donate() end

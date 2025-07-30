@@ -31,6 +31,9 @@ This helps support development and keep the ESO addon ecosystem fun and alive!
 
 If you're an addon developer and want to use `LibCustomIcons`:
 
+Have a look at the full documentation here: [Github Pages](https://m00nyone.github.io/LibCustomIcons/)
+
+
 ```lua
 local icon = LibCustomIcons.GetIcon("@accountName")
 ```

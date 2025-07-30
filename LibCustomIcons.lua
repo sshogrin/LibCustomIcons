@@ -15,7 +15,7 @@ local EM = EVENT_MANAGER
 
 --- @type table<string, string> Table mapping `@accountname` to "texturePath"
 local static = {}
---- @type table<string, table> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
+--- @type table<string, table[]> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
 local animated = {}
 --[[ doc.lua end ]]
 

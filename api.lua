@@ -64,16 +64,19 @@ end
 local cachedStaticIconsTableClone = nil
 local cachedAnimatedIconsTableClone = nil
 
---- Retrieves all registered static icons
----@return table<string,string> staticTable mapping `@accountname` to `texturePath` for all static icons
+--- Retrieves all registered static icons from the internal table as a deep copy.
+--- Editing the returning table has no effect to the internal one that is used to retrieve actual icons.
+--- @return table<string,string> staticTable mapping `@accountname` to `texturePath` for all static icons
 function lib.GetAllStatic()
     if not cachedStaticIconsTableClone then
         cachedStaticIconsTableClone = clone(s)
     end
     return cachedStaticIconsTableClone
 end
---- Retrieves all registered static icons
----@return table<string,table> animTable mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
+
+--- Retrieves all registered animated icons from the internal table as a deep copy.
+--- Editing the returning table has no effect to the internal one that is used to retrieve actual icons.
+--- @return table<string,table[]> animTable mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
 function lib.GetAllAnimated()
     if not cachedAnimatedIconsTableClone then
         cachedAnimatedIconsTableClone = clone(a)

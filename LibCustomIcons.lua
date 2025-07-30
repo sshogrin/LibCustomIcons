@@ -44,8 +44,8 @@ function lib.GetStaticTable()
 end
 --- Returns a reference to the internal animated table.
 --- This is only available during addon initialization, to disallow other addons tampering with the data later.
------- @return table<string, animEntry> The table of custom animated icons.
-function lib:GetAnimatedTable()
+--- @return table<string, animEntry> The table of custom animated icons.
+function lib.GetAnimatedTable()
     return animated
 end
 

@@ -1,5 +1,6 @@
 ## 2025.07.30
 - HasIcon bugfix by @WashedNotSloshed
+- unify API
 
 ## 2025.07.22
 - Addon now automatically releases every sunday if there are changes in the files

@@ -1,5 +1,4 @@
 local lib_name = "LibCustomIcons"
-
 local lib = _G[lib_name]
 local s = lib.GetStaticTable()
 local a = lib.GetAnimatedTable()
@@ -61,11 +60,55 @@ end
 
 --- Retrieves all registered static icons
 ---@return table<string,string> table mapping `@accountname` to `texturePath` for all static icons
-function lib.GetAllStaticIcons()
+function lib.GetAllStatic()
     return clone(s)
 end
 --- Retrieves all registered static icons
 ---@return table<string,animEntry> table mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
-function lib.GetAllAnimatedIcons()
+function lib.GetAllAnimated()
     return clone(a)
+end
+
+--[[
+    Icon count caching:
+    The number of static and animated icons is fixed at runtime (icons are registered once and not modified later).
+    To optimize performance, counts are calculated only once when first requested and then cached for future calls.
+]]
+
+local staticIconCount = 0
+local animatedIconCount = 0
+local totalIconCount = 0
+
+--- Returns the number of registered static icons.
+--- The result is cached after the first computation.
+--- @return number count The number of static icons
+function lib.GetStaticCount()
+    if staticIconCount == 0 then
+        for _ in pairs(s) do
+            staticIconCount = staticIconCount + 1
+        end
+    end
+    return staticIconCount
+end
+
+--- Returns the number of registered animated icons.
+--- The result is cached after the first computation.
+--- @return number count The number of animated icons
+function lib.GetAnimatedCount()
+    if animatedIconCount == 0 then
+        for _ in pairs(a) do
+            animatedIconCount = animatedIconCount + 1
+        end
+    end
+    return animatedIconCount
+end
+
+--- Returns the total number of registered icons (static + animated).
+--- The result is cached after the first computation.
+--- @return number count The total number of icons
+function lib.GetIconCount()
+    if totalIconCount == 0 then
+        totalIconCount = lib.GetStaticIconCount() + lib.GetAnimatedIconCount()
+    end
+    return totalIconCount
 end

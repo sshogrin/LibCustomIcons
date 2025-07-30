@@ -1,3 +1,5 @@
+--[[ doc.lua begin ]]
+--- @class LibCustomIcons
 local lib = {
     name = "LibCustomIcons",
     version = "dev",
@@ -21,6 +23,7 @@ local EM = EVENT_MANAGER
 local static = {}
 --- @type table<string, animEntry> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
 local animated = {}
+--[[ doc.lua end ]]
 
 --- Returns a read-only proxy table
 local function readOnly(t)

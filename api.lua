@@ -1,4 +1,3 @@
----@class LibCustomIcons
 local lib_name = "LibCustomIcons"
 local lib = _G[lib_name]
 local s = lib.GetStaticTable()
@@ -12,6 +11,8 @@ local function clone(t)
     end
     return copy
 end
+
+--[[ doc.lua begin ]]
 
 --- Checks whether a static icon exists for the given username.
 --- @param username string The player's account name (e.g., "@m00nyONE").
@@ -118,3 +119,5 @@ function lib.GetIconCount()
     end
     return cachedTotalIconCount
 end
+
+--[[ doc.lua end ]]

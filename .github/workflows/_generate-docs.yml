@@ -3,11 +3,13 @@ on:
   workflow_call:
 jobs:
   docs:
-    if: github.repository_owner == 'm00nyONE'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Generate doc.lua file
+        run: |
+          python3 .github/scripts/docs/generate-doc.py LibCustomIcons.addon docs-lua
       - name: Generate docs with emmylua_doc_cli
         run: |
           URL=$(curl -s https://api.github.com/repos/EmmyLuaLs/emmylua-analyzer-rust/releases/latest | jq -r '.assets[] | select(.name? | match("emmylua_doc_cli-linux-x64.tar.gz$")) | .browser_download_url')
@@ -21,9 +23,9 @@ jobs:
           tar -xzf emmylua_doc_cli-linux-x64.tar.gz
           chmod +x emmylua_doc_cli-linux-x64.tar.gz
 
-          ./emmylua_doc_cli --input . --output ./docs
+          ./emmylua_doc_cli --output ./docs-md ./docs-lua
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONFIG_FILE: docs/mkdocs.yml
+          CONFIG_FILE: docs-md/mkdocs.yml

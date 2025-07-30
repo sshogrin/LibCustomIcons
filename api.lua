@@ -42,14 +42,14 @@ function lib.GetStatic(username)
 end
 --- Retrieves the texturePath and animation parameters of the animated icon for the user or nil if none exists.
 --- @param username string The player's account name (e.g., "@m00nyONE").
---- @return table<string,animEntry>|nil `{texturePath, width, height, fps}` or `nil` if no static icon exists
+--- @return table[] animation `{texturePath, width, height, fps}` or `nil` if no animated icon exists
 function lib.GetAnimated(username)
     return a[username]
 end
 
 --- Retrieves the texturePath and animation parameters of the animated icon for the user if it exists or the texturePath of the static icon for the user or nil if none exists.
 --- @param username string The player's account name (e.g., "@m00nyONE").
---- @return table<string,animEntry>|string|nil `{texturePath, width, height, fps}` or `texturePath` or `nil` if no static icon exists
+--- @return table[]|string animation `{texturePath, width, height, fps}` or `texturePath` or `nil` if no static icon exists
 function lib.GetIcon(username)
     local anim = lib.GetAnimated(username)
     if anim then return anim end
@@ -65,7 +65,7 @@ local cachedStaticIconsTableClone = nil
 local cachedAnimatedIconsTableClone = nil
 
 --- Retrieves all registered static icons
----@return table<string,string> table mapping `@accountname` to `texturePath` for all static icons
+---@return table<string,string> staticTable mapping `@accountname` to `texturePath` for all static icons
 function lib.GetAllStatic()
     if not cachedStaticIconsTableClone then
         cachedStaticIconsTableClone = clone(s)
@@ -73,7 +73,7 @@ function lib.GetAllStatic()
     return cachedStaticIconsTableClone
 end
 --- Retrieves all registered static icons
----@return table<string,animEntry> table mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
+---@return table<string,table> animTable mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
 function lib.GetAllAnimated()
     if not cachedAnimatedIconsTableClone then
         cachedAnimatedIconsTableClone = clone(a)

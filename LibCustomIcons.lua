@@ -13,15 +13,9 @@ _G[lib_name] = lib
 
 local EM = EVENT_MANAGER
 
---- @class animEntry
---- @field texturePath string path of the sprite texture
---- @field width number amount of horizontal frames in the sprite
---- @field height number amount of vertical frames in the sprite
---- @field fps number frames per second of the animation
-
 --- @type table<string, string> Table mapping `@accountname` to "texturePath"
 local static = {}
---- @type table<string, animEntry> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
+--- @type table<string, table> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
 local animated = {}
 --[[ doc.lua end ]]
 

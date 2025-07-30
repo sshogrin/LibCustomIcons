@@ -43,7 +43,6 @@ def generate_main_file(lua_files, addon_root, output_file):
             blocks = extract_doc_blocks(full_path)
             if blocks:
                 # rel_display = os.path.relpath(full_path, addon_root)
-                # all_blocks.append(f"-- From: {rel_display}")
                 all_blocks.extend(blocks)
                 all_blocks.append("")  # for spacing
         else:
@@ -51,7 +50,7 @@ def generate_main_file(lua_files, addon_root, output_file):
 
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(all_blocks))
+        f.write("\n\n\n".join(all_blocks))
 
     print(f"✅ Documentation generated: {output_file}")
 
@@ -63,7 +62,7 @@ def main():
     args = parser.parse_args()
 
     addon_file = os.path.abspath(args.addon_file)
-    output_file = os.path.join(os.path.abspath(args.output_dir), "main.lua")
+    output_file = os.path.join(os.path.abspath(args.output_dir), "docs.lua")
 
     lua_files = parse_addon_file(addon_file)
     generate_main_file(lua_files, os.path.dirname(addon_file), output_file)

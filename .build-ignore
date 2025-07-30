@@ -2,4 +2,7 @@
 .github
 .gitignore
 .build-ignore
+README_ESOUI.txt
+docs-lua
+docs-md
 TODO.md

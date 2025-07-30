@@ -1,3 +1,6 @@
+## 2025.07.30
+- HasIcon bugfix by @Washed
+
 ## 2025.07.22
 - Addon now automatically releases every sunday if there are changes in the files
 - remove orphaned icons

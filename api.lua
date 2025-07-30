@@ -29,7 +29,7 @@ end
 --- @param username string The player's account name (e.g., "@m00nyONE").
 --- @return boolean hasStaticIcon `true` if a custom static icons exists, `false` otherwise.
 function lib.HasIcon(username)
-    return lib:HasStatic(username) or lib:HasAnimated(username)
+    return lib.HasStatic(username) or lib.HasAnimated(username)
 end
 
 

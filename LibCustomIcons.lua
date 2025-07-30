@@ -1,4 +1,3 @@
----@class LibCustomIcons
 local lib = {
     name = "LibCustomIcons",
     version = "dev",

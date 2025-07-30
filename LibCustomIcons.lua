@@ -15,7 +15,7 @@ local EM = EVENT_MANAGER
 
 --- @type table<string, string> Table mapping `@accountname` to "texturePath"
 local static = {}
---- @type table<string, table[]> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
+--- @type table<string, table> Table mapping `@accountname` to { "texturePath", sizeX, sizeY, fps }
 local animated = {}
 --[[ doc.lua end ]]
 
@@ -41,7 +41,7 @@ function lib.GetStaticTable()
 end
 --- Returns a reference to the internal animated table.
 --- This is only available during addon initialization, to disallow other addons tampering with the data later.
---- returns table<string, animEntry> The table of custom animated icons.
+--- returns table<string, table> The table of custom animated icons.
 function lib.GetAnimatedTable()
     return animated
 end

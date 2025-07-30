@@ -42,14 +42,14 @@ function lib.GetStatic(username)
 end
 --- Retrieves the texturePath and animation parameters of the animated icon for the user or nil if none exists.
 --- @param username string The player's account name (e.g., "@m00nyONE").
---- @return table[] animation `{texturePath, width, height, fps}` or `nil` if no animated icon exists
+--- @return table animation `{texturePath, width, height, fps}` or `nil` if no animated icon exists
 function lib.GetAnimated(username)
     return a[username]
 end
 
 --- Retrieves the texturePath and animation parameters of the animated icon for the user if it exists or the texturePath of the static icon for the user or nil if none exists.
 --- @param username string The player's account name (e.g., "@m00nyONE").
---- @return table[]|string animation `{texturePath, width, height, fps}` or `texturePath` or `nil` if no static icon exists
+--- @return table|string animation `{texturePath, width, height, fps}` or `texturePath` or `nil` if no static icon exists
 function lib.GetIcon(username)
     local anim = lib.GetAnimated(username)
     if anim then return anim end
@@ -76,7 +76,7 @@ end
 
 --- Retrieves all registered animated icons from the internal table as a deep copy.
 --- Editing the returning table has no effect to the internal one that is used to retrieve actual icons.
---- @return table<string,table[]> animTable mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
+--- @return table<string,table> animTable mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
 function lib.GetAllAnimated()
     if not cachedAnimatedIconsTableClone then
         cachedAnimatedIconsTableClone = clone(a)

@@ -58,57 +58,62 @@ function lib.GetIcon(username)
     return nil
 end
 
+-- cached Clones of the internal tables for the GetAll* function. As these tables should always be readOnly and do nothing if edited, there is no need for them to be cloned each time they're requested
+local cachedStaticIconsTableClone = nil
+local cachedAnimatedIconsTableClone = nil
+
 --- Retrieves all registered static icons
 ---@return table<string,string> table mapping `@accountname` to `texturePath` for all static icons
 function lib.GetAllStatic()
-    return clone(s)
+    if not cachedStaticIconsTableClone then
+        cachedStaticIconsTableClone = clone(s)
+    end
+    return cachedStaticIconsTableClone
 end
 --- Retrieves all registered static icons
 ---@return table<string,animEntry> table mapping `@accountname` to `{texturePath, width, height, fps}` for all animated icons
 function lib.GetAllAnimated()
-    return clone(a)
+    if not cachedAnimatedIconsTableClone then
+        cachedAnimatedIconsTableClone = clone(a)
+    end
+    return cachedAnimatedIconsTableClone
 end
 
---[[
-    Icon count caching:
-    The number of static and animated icons is fixed at runtime (icons are registered once and not modified later).
-    To optimize performance, counts are calculated only once when first requested and then cached for future calls.
-]]
-
-local staticIconCount = 0
-local animatedIconCount = 0
-local totalIconCount = 0
+-- The number of static and animated icons is fixed at runtime (icons are registered once and not modified later). To optimize performance, counts are calculated only once when first requested and then cached for future calls.
+local cachedStaticIconCount = 0
+local cachedAnimatedIconCount = 0
+local cachedTotalIconCount = 0
 
 --- Returns the number of registered static icons.
 --- The result is cached after the first computation.
 --- @return number count The number of static icons
 function lib.GetStaticCount()
-    if staticIconCount == 0 then
+    if cachedStaticIconCount == 0 then
         for _ in pairs(s) do
-            staticIconCount = staticIconCount + 1
+            cachedStaticIconCount = cachedStaticIconCount + 1
         end
     end
-    return staticIconCount
+    return cachedStaticIconCount
 end
 
 --- Returns the number of registered animated icons.
 --- The result is cached after the first computation.
 --- @return number count The number of animated icons
 function lib.GetAnimatedCount()
-    if animatedIconCount == 0 then
+    if cachedAnimatedIconCount == 0 then
         for _ in pairs(a) do
-            animatedIconCount = animatedIconCount + 1
+            cachedAnimatedIconCount = cachedAnimatedIconCount + 1
         end
     end
-    return animatedIconCount
+    return cachedAnimatedIconCount
 end
 
 --- Returns the total number of registered icons (static + animated).
 --- The result is cached after the first computation.
 --- @return number count The total number of icons
 function lib.GetIconCount()
-    if totalIconCount == 0 then
-        totalIconCount = lib.GetStaticIconCount() + lib.GetAnimatedIconCount()
+    if cachedTotalIconCount == 0 then
+        cachedTotalIconCount = lib.GetStaticIconCount() + lib.GetAnimatedIconCount()
     end
-    return totalIconCount
+    return cachedTotalIconCount
 end

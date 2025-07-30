@@ -4,7 +4,7 @@ import sys
 import struct
 
 # Constants
-ROOT_DIR = ".."  # We are running from LibCustomIcons/
+ROOT_DIR = "."  # We are running from LibCustomIcons/
 MAX_STATIC_SIZE = 128
 
 # Warnings and errors will be collected here

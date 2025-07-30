@@ -8,10 +8,6 @@ on:
 jobs:
   test:
     uses: ./.github/workflows/_tests.yml
-  docs:
-    uses: ./.github/workflows/_generate-docs.yml
-    permissions:
-      contents: write
   release:
     if: github.repository_owner == 'm00nyONE'
     name: "dev release"

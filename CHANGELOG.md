@@ -1,6 +1,7 @@
-## 2025.07.30
+## 2025.08.02
 - HasIcon bugfix by @WashedNotSloshed
 - unify API
+- fix some icons that went missing during migration
 
 ## 2025.07.22
 - Addon now automatically releases every sunday if there are changes in the files

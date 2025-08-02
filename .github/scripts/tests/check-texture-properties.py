@@ -86,8 +86,8 @@ def check_animated_icon(dds_path, name, lua_file, line, cols, rows, fps):
     width, height = size
     if width % cols != 0 or height % rows != 0:
         errors.append(f"{lua_file}:{line} | {name}: Texture size {width}x{height} not divisible by {cols}x{rows} frames")
-    if width % 8 != 0 or height % 8 != 0:
-        errors.append(f"{lua_file}:{line} | {name}: Size is not multiple of 8 ({width}x{height})")
+    if width % 4 != 0 or height % 4 != 0:
+        errors.append(f"{lua_file}:{line} | {name}: Size is not multiple of 4 ({width}x{height})")
 
 
 def main():

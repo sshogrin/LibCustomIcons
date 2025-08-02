@@ -918,6 +918,7 @@ a["@Duk3mNuk3m"] = {"LibCustomIcons/icons/misc6/Duk3mNuk3m_anim.dds", 5, 4, 10}
 a["@ASAPXelah"] = {"LibCustomIcons/icons/misc6/ASAPXelah_anim_4.dds", 5, 3, 10}
 a["@EternaIGhost"] = {"LibCustomIcons/icons/misc6/EternaIGhost_anim.dds", 8, 3, 15}
 a["@KingM0n3y"] = {"LibCustomIcons/icons/misc6/KingM0n3y_anim.dds", 11, 3, 25}
+s["@ChristineCamaro"] = "LibCustomIcons/icons/misc6/ChristineCamaro.dds"
 a["@ChristineCamaro"] = {"LibCustomIcons/icons/misc6/ChristineCamaro_anim.dds", 7, 4, 10}
 a["@EversongX"] = {"LibCustomIcons/icons/misc6/EversongX_anim.dds", 6, 4, 20}
 a["@JayStay2EZ"] = {"LibCustomIcons/icons/misc6/JayStay2EZ_anim.dds", 5, 3, 8}

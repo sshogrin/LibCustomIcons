@@ -463,3 +463,4 @@ a["@iaspis"] = {"LibCustomIcons/icons/misc4/iaspis_anim2.dds", 54, 1, 10}
 a["@DejaVuDetroit"] = {"LibCustomIcons/icons/misc4/DejaVuDetroit_anim.dds", 9, 3, 18}
 a["@Comparer1991"] = {"LibCustomIcons/icons/misc4/Comparer1991_anim.dds", 8, 1, 4}
 a["@EcruteakCity"] = a["@randomuserID1"]
+a["@Orblitzer"] = a["catjam"]

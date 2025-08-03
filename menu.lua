@@ -17,13 +17,12 @@ local strfmt = string.format
 
 local githubURL = "https://github.com/m00nyONE/LibCustomIcons"
 
-
 local function getPanel()
     return {
         type = 'panel',
         name = lib_name,
         displayName = lib_name,
-        author = '|c76c3f4@m00nyONE|r',
+        author = strfmt("|c76c3f4%s|r", lib_author),
         version = string.format('|c00FF00%s|r', lib_version),
         website = 'https://www.esoui.com/downloads/info4161-LibCustomIcons.html#info',
         donation = lib.Donate,
@@ -68,7 +67,7 @@ local function getOptions()
             controls = {
                 {
                     type = "description",
-                    text = "If you know how to code addons, you can just create a PullRequest on Github and add a custom name that way."
+                    text = "If you know how to code addons, you can just create a PullRequest on Github and add a custom icon that way."
                 },
                 {
                     type = "button",
